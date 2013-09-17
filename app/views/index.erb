@@ -1,23 +1,47 @@
 <div class="container">
   <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+  <div>
+    <form action= "/cool_url" method="GET">
+      <label for="name">Enter your name: </label>
+      <input id="name" type="text" name="name">
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+      <label for="text">Enter some text: </label>
+      <textarea id="text" rows=5 cols=20 name="text" ></textarea>
+      <input type="radio" name="group1" value="Milk"> Milk<br>
+      <input type="radio" name="group1" value="Butter" checked> Butter<br>
+    
+      <input type="submit">
+      <input type="checkbox" name="option1" value="Milk"> Milk<br>
+      <input type="checkbox" name="option2" value="Butter" checked> Butter<br>
+      <input type="checkbox" name="option3" value="Cheese"> Cheese<br>
+    </form>
+  </div>
+
+
+  <div>
+    <form action="/cool_url" method="POST">
+      <input type="text" name="post[title]">
+      <input type="text" name="post[price]">
+      <textarea name="post[description]"></textarea>
+
+
+      <label for="user_input">Enter some text: </label>
+      <input id="user_input" type="text" name="user_input">
+      <label for="text">Enter some text: </label>
+      <textarea id="text" rows=5 cols=20 name="text" ></textarea>
+
+      <input type="radio" name="group1" value="Milk"> Milk<br>
+      <input type="radio" name="group1" value="Butter" checked> Butter<br>
+
+      <input type="checkbox" name="option1" value="Milk"> Milk<br>
+      <input type="checkbox" name="option2" value="Butter" checked> Butter<br>
+      <input type="checkbox" name="option3" value="Cheese"> Cheese<br>
+      <select name="mydropdown">
+        <option value="Milk">Fresh Milk</option>
+        <option value="Cheese">Old Cheese</option>
+        <option value="Bread">Hot Bread</option>
+      </select>
+      <input type="submit">
+    </form>
+  </div>
 </div>
